@@ -89,8 +89,7 @@ class GimmeProxyApi(object):
         elif r.status_code == 429:
             raise TooManyRequests("You did more than 20 requests in 60 seconds, slow down !")
         else:
-            print(r.status_code)
-            raise Exception("An unknown error occured")
+            raise Exception("An unknown error occured, status_code = {}".format(r.status_code))
         self.nb_total_calls += 1
         return json_response
 
