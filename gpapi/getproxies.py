@@ -57,8 +57,8 @@ class GimmeProxyApi(object):
     def __init__(self, apikey=None):
         self.apikey = apikey
         if self.apikey is None:
-            print("You have no api key you are limited to {} calls per minute").format(
-                self._nb_calls_per_min_limit)
+            print("You have no api key you are limited to {} calls per minute".format(
+                self._nb_calls_per_min_limit))
         self.base_url = "http://gimmeproxy.com/api/getProxy"
         self.custom_params = {'get': True, 'supportsHttps': True, 'anonymityLevel': 1,
                               'maxCheckPeriod': 300, 'supportsHttps': True, 'user-agent': True,
