@@ -8,9 +8,8 @@ Purpose : this is a small python wrapper for the http://gimmeproxy.com/api/
 """
 
 
-#########################################################
+
 # Import Packages and helpers
-#########################################################
 
 import os
 import json
@@ -19,21 +18,7 @@ import requests
 
 from .exceptions import InvalidParameters, TooManyRequests
 
-
-# apikey = os.environ.get('PROXY_API_KEY')
-
-# maxResults is 250 maximum
-
-# default_parameters = {'apiKey':apikey,'onlyActive':True,'onlyHttps':True,'onlyHighAvailLowLatency':True,
-# 					#'onlySupportsGoogle':True,'onlySupportsAmazon':True,
-# 					# 'onlySupportsCraigslist':True,'onlySupportsTripAdvisor':True,'onlySupportsKayak':True,
-# 					'minimumUptimePercentage':99,#'countryCodes':"US",
-# 					'onlyHighAnonymity':True,'maxResults':250,'sortByLatestTest':True}
-
-
-#########################################################
-# Main functions
-#########################################################
+# Main Class
 
 class GimmeProxyApi(object):
     """ This is a class to get proxies via the gimmeproxy api and process them
@@ -112,11 +97,3 @@ class GimmeProxyApi(object):
         def reset(self):
             """ Reset nb_total_calls """
             self.nb_total_calls = 0
-
-
-# if __name__ == "__main__":
-# 	gp = GetProxies(apikey=apikey)
-# 	proxy_world = gp.get_proxies(save_json="list_https_world_proxies3.json")
-# 	proxies_dict_world = gp.process_json_dict(proxy_world,save_file="list_https_world_proxies_test.p")
-# 	proxy_us = get_proxies(default_parameters,save_json="list_https_us_proxies.json",countryCodes="US")
-# 	process_json(proxy_us,save_file="list_https_us_proxies.txt")
