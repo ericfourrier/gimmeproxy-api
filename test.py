@@ -22,8 +22,6 @@ class TestGimmeProxyApi(unittest.TestCase):
     def test_check_params(self):
         self.assertRaises(InvalidParameters, self.api._check_params, {'supportsHttp': True})
         self.assertRaises(InvalidParameters, self.api._check_params, {'api_key': 'dfdfd'})
-        self.assertRaises(InvalidParameters, self.api.get_proxy, supportsHttp=False)
-        self.assertRaises(InvalidParameters, self.api.get_proxy, api_key='dfdf')
 
     def test_get_proxy(self):
         params = self.api.custom_params
