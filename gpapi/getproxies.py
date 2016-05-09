@@ -93,6 +93,6 @@ class GimmeProxyApi(object):
         self.nb_total_calls += 1
         return json_response
 
-        def reset(self):
-            """ Reset nb_total_calls """
-            self.nb_total_calls = 0
+    def reset(self):
+        """ Reset nb_total_calls """
+        self.nb_total_calls = 0
