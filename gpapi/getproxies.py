@@ -46,7 +46,7 @@ class GimmeProxyApi(object):
                 self._nb_calls_per_min_limit))
         self.base_url = "http://gimmeproxy.com/api/getProxy"
         self.custom_params = {'get': True, 'supportsHttps': True, 'anonymityLevel': 1,
-                              'maxCheckPeriod': 300, 'supportsHttps': True, 'user-agent': True,
+                              'maxCheckPeriod': 600, 'supportsHttps': True, 'user-agent': True,
                               'protocol': 'http'}
 
     def get_infos_parameters(self):
@@ -87,7 +87,7 @@ class GimmeProxyApi(object):
         if r.status_code == 200:
             json_response = r.json()
         elif r.status_code == 429:
-            raise TooManyRequests("You did more than 20 requests in 60 seconds, slow down !")
+            raise TooManyRequests("You did more than 60 requests in 60 seconds, slow down !")
         else:
             raise Exception("An unknown error occured, status_code = {}".format(r.status_code))
         self.nb_total_calls += 1
