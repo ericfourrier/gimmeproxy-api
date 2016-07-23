@@ -23,7 +23,7 @@ from .exceptions import InvalidParameters, TooManyRequests
 class GimmeProxyApi(object):
     """ This is a class to get proxies via the gimmeproxy api and process them
     in order to get the right format for the proxies parameter of the requests package """
-    _nb_calls_per_min_limit = 20
+    _nb_calls_per_min_limit = 60
     nb_total_calls = 0
     parameters_name = ["apikey", "get", "post", "cookies", "referer", "user-agent",
                        "supportsHttps", "anonymityLevel", "protocol", "port", "country", "maxCheckPeriod"]
